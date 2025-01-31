@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>ZKSync Bridge</title>
+</head>
+<style>
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #fff;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5em;
+}
+
+header .beta {
+  font-size: 0.8em;
+  color: #aaa;
+}
+
+.connect-wallet {
+  background-color: #0066ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.connect-wallet1 {
+  background-color: #0066ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.connect-wallet:hover {
+  background-color: #0051cc;
+}
+
+main {
+  margin-top: 20px;
+}
+
+.bridge {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.bridge h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
+.time-estimate {
+  margin: 20px 0;
+  text-align: right;
+  color: #888;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #0066ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+</style>
+<body>
+  <div class="container">
+    <header>
+      <h1>ZKSync <span class="beta">BETA</span></h1>
+      <button class="connect-wallet">Connect Wallet</button>
+    </header>
+
+    <main>
+      <div class="bridge">
+        <h2>Bridge</h2>
+        <form>
+          <div class="form-group">
+            <label for="from-network">From</label>
+            <select id="from-network">
+              <option value="ethereum">Ethereum</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="0">
+          </div>
+
+          <div class="form-group">
+            <label for="to-network">To</label>
+            <select id="to-network">
+              <option value="zksync">ZKSync</option>
+            </select>
+          </div>
+
+          <p class="time-estimate">~15 minutes</p>
+          <button type="button" class="connect-wallet1">Connect Wallet</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <a href="#">ef0f1c5</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
