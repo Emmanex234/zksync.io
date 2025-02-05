@@ -49,15 +49,30 @@
           
           
           <div class="flex flex-col sm:flex-row gap-8 justify-center w-full max-w-6xl px-4">
-    <video width="640" height="360" controls id="myVideo">
-        <source src="/zknation.io/_next/static/airdrop_video.mp4" type="video/mp4">
-        <script>
-         document.getElementById("myVideo").volume = 0; // Set volume to 50%
-        </script>
-      </video>
-      
+            <video id="myVideo" width="640" height="360" controls autoplay muted>
+              <source src="/zknation.io/_next/static/airdrop_video.mp4" type="video/mp4">
+              <script>
+                let video = document.getElementById("myVideo");
+                let volumeControl = document.getElementById("volumeControl");
+              
+                video.volume = 0.5; // Default volume
+              
+                // Remove 'muted' and set volume when user interacts
+                video.addEventListener("canplay", function() {
+                  video.muted = false;
+                  video.volume = 0.5;
+                });
+              
+                volumeControl.addEventListener("input", function() {
+                  video.volume = this.value;
+                });
+              </script>
+  
+            </video>
+          
+                 
     
-    <a id="airdop"  class="flex flex-col items-center p-8 border-[6px] border-white hover:border-[rgba(61,66,77,0.5)] hover:scale-105 transition-all duration-300 rounded-[75px] space-y-6 w-full sm:w-[45%]"><h4 class="text-2xl font-semibold">Claim Airdrop</h4><p class="text-center text-white/80">Click here to claim your token now</p>
+    <a id="airdop"  class="flex flex-col items-center p-8 border-[6px] border-white hover:border-[rgba(61,66,77,0.5)] hover:scale-105 transition-all duration-300 rounded-[75px] space-y-6 w-full sm:w-[45%]"><h4 class="text-2xl font-semibold">Claim Airdrop</h4><p class="text-center text-white/80">Click here to claim your token now <br> <br> A total of 2,000,000 ZK will be distributed among 1,000 participants, where the lucky participant will receive a total of 10,000 ZK, while the average participant receives 2,000 ZK tokens.</p>
     </a>
     
 
